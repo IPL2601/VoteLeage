@@ -1,0 +1,21 @@
+.leagues-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .leagues-card {
+    background-color: #fbe9e7;
+    padding: 2rem;
+    color: #bf360c;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+    button {
+      margin-top: 1rem;
+    }
+  }
+  

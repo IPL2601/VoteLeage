@@ -40,8 +40,9 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!this.getToken();
+    return !!this.getToken(); //Devuelve el Token si esta logueado
   }
+  
   
   register(data: { email: string; username: string; password: string }): Observable<{ token: string }> {
     return this.http.post<{ token: string }>(`${this.apiUrl}/register`, data).pipe(

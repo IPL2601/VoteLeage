@@ -1,0 +1,17 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .home-card {
+    background-color: #fff3f3;
+    padding: 2rem;
+    color: #b71c1c;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
