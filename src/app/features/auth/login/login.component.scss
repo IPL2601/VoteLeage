@@ -59,3 +59,24 @@ $red-light: #ff8a80;
     }
   }
 }
+.message-box {
+  background-color: #fff3f3;
+  border-left: 4px solid #e53935;
+  color: #b71c1c;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

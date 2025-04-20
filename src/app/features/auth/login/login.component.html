@@ -6,6 +6,11 @@
       </mat-card-header>
   
       <mat-card-content>
+        <!-- Spinner -->
+        <div *ngIf="isLoading" class="spinner-container">
+          <mat-spinner diameter="40" color="warn"></mat-spinner>
+        </div>
+        <!-- Formulario -->
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Correo electrónico</mat-label>
@@ -22,7 +27,11 @@
               * Mínimo 6 caracteres
             </mat-error>
           </mat-form-field>
-  
+          <!-- Info-Mensaje  -->
+          <div *ngIf="message" class="message-box">
+            {{ message }}
+          </div>
+
           <button mat-raised-button color="primary" class="login-button" type="submit" [disabled]="loginForm.invalid">
             Iniciar sesión
           </button>
