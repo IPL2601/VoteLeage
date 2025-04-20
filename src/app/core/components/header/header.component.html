@@ -1,0 +1,15 @@
+<header class="app-header">
+    <!-- Logo centrado -->
+    <div class="logo-container">
+      <a routerLink="/home">
+        <img src="assets/Logo.png" alt="VoteLeague Logo" class="header-logo" />
+      </a>
+    </div>
+  
+    <!-- Usuario a la derecha -->
+    <div class="user-info" *ngIf="user">
+      <img [src]="user?.profileImage" alt="Foto de perfil" class="profile-image" />
+      <span class="user-name">{{ user?.name }}</span>
+    </div>
+  </header>
+  
