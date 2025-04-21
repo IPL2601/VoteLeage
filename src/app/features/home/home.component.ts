@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -37,14 +38,14 @@ export class HomeComponent {
   scrollLeft(containerId: string) {
     const container = document.getElementById(containerId);
     if (container) {
-      container.scrollBy({ left: -300, behavior: 'smooth' });
+      container.scrollBy({ left: -250, behavior: 'smooth' });
     }
   }
   
   scrollRight(containerId: string) {
     const container = document.getElementById(containerId);
     if (container) {
-      container.scrollBy({ left: 300, behavior: 'smooth' });
+      container.scrollBy({ left: 250, behavior: 'smooth' });
     }
   }
   

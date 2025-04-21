@@ -1,58 +1,82 @@
+$app-red-dark: #b71c1c;
+$app-red-light: #fff3f3;
+$app-gray: #2c2b2b;
+
 .app-header {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #fff3f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .header-logo {
-    height: 60px;
+  width: 100%;
+  background-color: $app-gray;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+
+  .logo {
+    height: 50px;
     cursor: pointer;
     transition: transform 0.2s ease;
-  
+
     &:hover {
       transform: scale(1.05);
     }
   }
-  
-  .user-info {
-    position: absolute;
-    right: 2rem;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+
+  button {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .profile-image {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #c62828;
-  }
-  
-  .user-name {
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     font-weight: 500;
-    color: #b71c1c;
+    color: $app-red-dark;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $app-red-dark;
+    }
+
+    mat-icon {
+      font-size: 20px;
+    }
+
+    .user-name {
+      white-space: nowrap;
+      font-size: 1.1rem;
+      align-items: center;
+    }
   }
-  .header-logo {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-    max-height: 60px;
-    max-width: 200px;
-    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .user-name {
+    display: none;
   }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+}

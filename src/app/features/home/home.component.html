@@ -1,74 +1,69 @@
-<div class="home-container">
-  <!-- Sección: Ligas en tendencia -->
-  <div class="section">
-    <h2>👑 Ligas en tendencia</h2>
+<div class="home-wrapper">
 
+  <!-- SECCIÓN: Ligas en tendencia -->
+  <section class="home-section">
+    <h2 class="section-title">🔥 Ligas en tendencia</h2>
     <div class="carousel-wrapper">
-      <!-- Botón Izquierda -->
       <button class="arrow left" (click)="scrollLeft('trendingScroll')">
         <mat-icon>chevron_left</mat-icon>
       </button>
 
-      <!-- Contenedor Scrollable Horizontal -->
       <div class="scroll-container" id="trendingScroll">
-        <mat-card class="carousel-card" *ngFor="let liga of trendingLeagues">
-          <h3>{{ liga.name }}</h3>
+        <mat-card *ngFor="let liga of trendingLeagues" class="carousel-card">
+          <h3 matTooltip="{{ liga.name }}">{{ liga.name }}</h3>
           <p>{{ liga.followers }} seguidores</p>
-          <a mat-button color="primary">Ver liga</a>
+          <button mat-button color="primary">Ver liga</button>
         </mat-card>
       </div>
 
-      <!-- Botón Derecha -->
       <button class="arrow right" (click)="scrollRight('trendingScroll')">
         <mat-icon>chevron_right</mat-icon>
       </button>
     </div>
-  </div>
+  </section>
 
-  <!-- Sección: Ligas a las que perteneces -->
-  <section class="section">
-    <h2>🤝 Ligas en las que participas</h2>
+  <!-- SECCIÓN: Ligas en las que participas -->
+  <section class="home-section">
+    <h2 class="section-title">🤝 Ligas en las que participas</h2>
     <div class="carousel-wrapper">
-      <!-- Botón Izquierda -->
-      <button class="arrow left" (click)="scrollLeft('MyLeagesScroll')">
+      <button class="arrow left" (click)="scrollLeft('participatingScroll')">
         <mat-icon>chevron_left</mat-icon>
       </button>
-      <!-- Contenedor Scrollable Horizontal -->
-      <div class="scroll-container" id="MyLeagesScroll">
-        <mat-card *ngFor="let league of myLeagues" class="carousel-card">
-          <h3>{{ league.name }}</h3>
-          <p>Rol: {{ league.role }}</p>
+
+      <div class="scroll-container" id="participatingScroll">
+        <mat-card *ngFor="let liga of myLeagues" class="carousel-card">
+          <h3>{{ liga.name }}</h3>
+          <p>Rol: {{ liga.role }}</p>
           <button mat-button color="accent">Ir a la liga</button>
         </mat-card>
       </div>
-      <!-- Botón Derecha -->
-      <button class="arrow right" (click)="scrollRight('MyLeagesScroll')">
+
+      <button class="arrow right" (click)="scrollRight('participatingScroll')">
         <mat-icon>chevron_right</mat-icon>
       </button>
     </div>
   </section>
 
-  <!-- Sección: Ligas que has creado -->
-  <section class="section">
-    <h2>🛠️ Ligas que tú has creado</h2>
+  <!-- SECCIÓN: Ligas creadas por ti -->
+  <section class="home-section">
+    <h2 class="section-title">🛠️ Ligas creadas por ti</h2>
     <div class="carousel-wrapper">
-      <!-- Botón Izquierda -->
-      <button class="arrow left" (click)="scrollLeft('CreateLeagesScroll')">
+      <button class="arrow left" (click)="scrollLeft('createdScroll')">
         <mat-icon>chevron_left</mat-icon>
       </button>
-      <!-- Contenedor Scrollable Horizontal -->
-      <div class="scroll-container" id="CreateLeagesScroll">
-        <mat-card *ngFor="let league of createdLeagues" class="carousel-card">
-          <h3>{{ league.name }}</h3>
-          <p>Rol: {{ league.role }}</p>
+
+      <div class="scroll-container" id="createdScroll">
+        <mat-card *ngFor="let liga of createdLeagues" class="carousel-card">
+          <h3>{{ liga.name }}</h3>
+          <p>Rol: {{ liga.role }}</p>
           <button mat-button color="warn">Administrar</button>
         </mat-card>
       </div>
 
-      <!-- Botón Derecha -->
-      <button class="arrow right" (click)="scrollRight('CreateLeagesScroll')">
+      <button class="arrow right" (click)="scrollRight('createdScroll')">
         <mat-icon>chevron_right</mat-icon>
       </button>
     </div>
   </section>
+
 </div>

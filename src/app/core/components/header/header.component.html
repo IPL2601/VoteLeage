@@ -1,15 +1,30 @@
 <header class="app-header">
-    <!-- Logo centrado -->
+  <div class="header-content">
+    <!-- Logo al centro visual (centrado con flex) -->
     <div class="logo-container">
       <a routerLink="/home">
-        <img src="assets/Logo.png" alt="VoteLeague Logo" class="header-logo" />
+        <img src="assets/Header.png" alt="Logo" class="logo" />
       </a>
     </div>
-  
+
     <!-- Usuario a la derecha -->
-    <div class="user-info" *ngIf="user">
-      <img [src]="user?.profileImage" alt="Foto de perfil" class="profile-image" />
-      <span class="user-name">{{ user?.name }}</span>
-    </div>
-  </header>
-  
+    <div class="user-container" *ngIf="user">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <img [src]="user.profileImage" alt="Perfil" class="avatar" />
+        <span class="user-name">{{ user.name }}</span>
+        <mat-icon>expand_more</mat-icon>
+      </button>
+    
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editProfile()">
+          <mat-icon>edit</mat-icon>
+          <span>Editar perfil</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar sesión</span>
+        </button>
+      </mat-menu>
+    </div>    
+  </div>
+</header>
