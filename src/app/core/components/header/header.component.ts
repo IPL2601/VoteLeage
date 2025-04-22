@@ -24,9 +24,16 @@ export class HeaderComponent {
   
   constructor(private router: Router) {}
 
+  goToProfile() {
+    //this.router.navigate(['/profile']);
+  }
+
   editProfile() {
-    console.log('Editar perfil');
-    // Aquí podrías navegar a /profile o abrir un diálogo
+    //this.router.navigate(['/profile/edit']);
+  }
+
+  goToMyLeagues() {
+    //this.router.navigate(['/my-leagues']);
   }
 
   logout() {

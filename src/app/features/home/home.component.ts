@@ -4,25 +4,26 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   trendingLeagues = [
-    { name: 'Red Bull Batalla', followers: 12450 },
-    { name: 'FMS España', followers: 9730 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
-    { name: 'Ultimate League', followers: 8510 },
+    { name: 'Red Bull Batalla', followers: 12450, id: 1 },
+    { name: 'FMS España', followers: 9730, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
+    { name: 'Ultimate League', followers: 8510, id: 1},
   ];
 
   myLeagues = [

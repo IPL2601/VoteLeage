@@ -9,16 +9,24 @@
 
     <!-- Usuario a la derecha -->
     <div class="user-container" *ngIf="user">
-      <button mat-button [matMenuTriggerFor]="menu">
+      <button mat-button [matMenuTriggerFor]="menu" class="user-button">
         <img [src]="user.profileImage" alt="Perfil" class="avatar" />
         <span class="user-name">{{ user.name }}</span>
         <mat-icon>expand_more</mat-icon>
       </button>
-    
+      
       <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="goToProfile()">
+          <mat-icon>account_circle</mat-icon>
+          <span>Ver perfil</span>
+        </button>
         <button mat-menu-item (click)="editProfile()">
           <mat-icon>edit</mat-icon>
           <span>Editar perfil</span>
+        </button>
+        <button mat-menu-item (click)="goToMyLeagues()">
+          <mat-icon>emoji_events</mat-icon>
+          <span>Mis ligas</span>
         </button>
         <button mat-menu-item (click)="logout()">
           <mat-icon>logout</mat-icon>

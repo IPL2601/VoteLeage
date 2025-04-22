@@ -12,7 +12,7 @@
         <mat-card *ngFor="let liga of trendingLeagues" class="carousel-card">
           <h3 matTooltip="{{ liga.name }}">{{ liga.name }}</h3>
           <p>{{ liga.followers }} seguidores</p>
-          <button mat-button color="primary">Ver liga</button>
+          <a mat-button color="primary" [routerLink]="['/league', liga.id]">Ver liga</a>
         </mat-card>
       </div>
 

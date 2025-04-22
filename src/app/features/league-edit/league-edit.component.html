@@ -1,0 +1,30 @@
+<div class="league-edit-container">
+    <mat-card>
+      <h2>Editar liga</h2>
+  
+      <form [formGroup]="leagueForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre de la liga</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="leagueForm.get('name')?.hasError('required')">
+            El nombre es obligatorio.
+          </mat-error>
+          <mat-error *ngIf="leagueForm.get('name')?.hasError('minlength')">
+            Mínimo 3 caracteres.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="description" rows="4"></textarea>
+          <mat-hint align="end">
+            {{ leagueForm.get('description')?.value?.length || 0 }}/500
+          </mat-hint>
+        </mat-form-field>
+  
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="leagueForm.invalid">
+            Guardar cambios
+          </button>
+          <button mat-button color="warn" type="button" (click)="cancel()">
+  

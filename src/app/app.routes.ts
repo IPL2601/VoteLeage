@@ -25,6 +25,20 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/leagues/leagues.component').then(c => c.LeaguesComponent),
     canActivate: [AuthGuard] // Comprueba si esta logueado
+  },
+  {
+    path: 'league/:id',
+    loadComponent: () => import('./features/league-preview/league-preview.component').then(c => c.LeaguePreviewComponent),
+    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'league/:id/edit',
+    loadComponent: () =>
+      import('./features/league-edit/league-edit.component').then(m => m.LeagueEditComponent),
+    //canActivate: [AuthGuard]
   }
+  
+
+  
   ];
   
